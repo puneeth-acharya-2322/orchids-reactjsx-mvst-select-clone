@@ -1,27 +1,27 @@
 "use client";
 
-import AnnouncementBar from "@/components/sections/AnnouncementBar";
 import Header from "@/components/sections/Header";
-import HeroSlider from "@/components/sections/HeroSlider";
-import ProductCarousel from "@/components/sections/ProductCarousel";
+import Hero from "@/components/sections/Hero";
+import AllCollections from "@/components/sections/AllCollections";
+import ScrollingMarquee from "@/components/sections/ScrollingMarquee";
 import ShopByMaterial from "@/components/sections/ShopByMaterial";
 import ShopByCategory from "@/components/sections/ShopByCategory";
-import InstagramFeed from "@/components/sections/InstagramFeed";
-import ServiceHighlights from "@/components/sections/ServiceHighlights";
+import InstagramCarousel from "@/components/sections/InstagramCarousel";
+import TrustSignals from "@/components/sections/TrustSignals";
 import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
-      <AnnouncementBar />
+    <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <HeroSlider />
-        <ProductCarousel />
+        <Hero />
+        <AllCollections />
+        <ScrollingMarquee />
         <ShopByMaterial />
         <ShopByCategory />
-        <InstagramFeed />
-        <ServiceHighlights />
+        <InstagramCarousel />
+        <TrustSignals />
       </main>
       <Footer />
     </div>
