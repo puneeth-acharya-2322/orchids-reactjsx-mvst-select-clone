@@ -1,92 +1,48 @@
 import React from 'react';
 
-/**
- * AnnouncementBar Component
- * 
- * A premium, high-contrast black announcement bar featuring:
- * - An accessibility trigger on the left
- * - A centered, uppercase scrolling/marquee text for shipping information
- * 
- * Styled based on the provided design system:
- * - Background: #000000 (absolute black)
- * - Text: #FFFFFF (pure white)
- * - Font: Helvetica/GT Standard (approximated with system sans-serif per design)
- * - Size: 10px - 11px
- * - Letter spacing: 0.15em
- */
-
 const AnnouncementBar = () => {
   return (
-    <aside className="w-full bg-[#000000] text-white overflow-hidden relative z-50">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-[5%] py-[9px] flex items-center justify-center relative min-h-[34px]">
-        
-        {/* Left: Accessibility Trigger */}
-        <div className="absolute left-4 sm:left-[5%] top-1/2 -translate-y-1/2 hidden md:flex items-center">
-          <button 
-            type="button" 
-            className="flex items-center gap-1.5 group cursor-pointer border-none bg-transparent p-0 m-0 outline-none"
-            aria-label="Accessibility Settings"
-          >
-            <span className="text-[10px] font-semibold uppercase tracking-[0.15em] leading-none transition-opacity group-hover:opacity-70">
-              Accessibility
-            </span>
-            <div className="w-4 h-4 text-white flex items-center justify-center group-hover:opacity-70 transition-opacity">
-              <svg 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                className="w-3.5 h-3.5"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 8v8" />
-                <path d="M8 12h8" />
-              </svg>
-            </div>
-          </button>
-        </div>
-
-        {/* Center: Scrolling Announcement Text */}
-        <div className="flex-1 flex justify-center items-center overflow-hidden">
-          {/* Simple marquee wrapper for scrolling effect */}
-          <div className="relative flex whitespace-nowrap overflow-hidden">
-            <div className="animate-marquee inline-block px-4">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-center leading-tight">
-                FREE SHIPPING & RETURNS for all Contiguous us and select Canada & Europe orders
-              </p>
-            </div>
-            {/* Duplicate for infinite loop appearance if needed, though often these are centered stationary or rotating */}
-            <div className="hidden lg:inline-block animate-marquee2 absolute top-0 px-4 whitespace-nowrap">
-               <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-center leading-tight">
-                FREE SHIPPING & RETURNS for all Contiguous us and select Canada & Europe orders
-              </p>
-            </div>
+    <aside id="shopify-section-sections--18548534935808__announcement-bar" className="shopify-section shopify-section-group-header-group shopify-section--announcement-bar">
+      <div className="relative w-full overflow-hidden bg-[#1A1A1A] text-white py-[10px] md:py-[10px]">
+        <div className="container mx-auto px-5 lg:px-10 flex items-center justify-center min-h-[16.5px]">
+          
+          {/* Accessibility Trigger - Left Aligned */}
+          <div className="absolute left-5 lg:left-10 top-1/2 -translate-y-1/2 flex items-center">
+            <button 
+              type="button"
+              className="group flex items-center gap-1.5 p-0 bg-transparent border-none cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-white transition-opacity hover:opacity-80"
+              aria-label="Accessibility Menu"
+            >
+              <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] font-sans leading-none">
+                Accessibility
+              </span>
+              <div className="w-[14px] h-[14px] flex items-center justify-center">
+                <svg 
+                  viewBox="0 0 24 24" 
+                  className="w-full h-full fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z" />
+                </svg>
+              </div>
+            </button>
           </div>
+
+          {/* Centered Announcement Text */}
+          <div className="flex-1 flex justify-center items-center text-center">
+            <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] font-sans m-0 leading-tight max-w-[80%] md:max-w-none">
+              FREE SHIPPING & RETURNS for all Contiguous us and select Canada & Europe orders
+            </p>
+          </div>
+
+          {/* Hidden Spacer for Balance on Desktop if needed */}
+          <div className="hidden lg:block w-[100px] pointer-events-none"></div>
         </div>
       </div>
 
-      <style jsx global>{`
-        @keyframes marquee {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-100%); }
-        }
-        @keyframes marquee2 {
-          0% { transform: translateX(100%); }
-          100% { transform: translateX(0%); }
-        }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-        }
-        .animate-marquee2 {
-          animation: marquee2 30s linear infinite;
-        }
-        @media (max-width: 1024px) {
-          .animate-marquee, .animate-marquee2 {
-            animation: none;
-            white-space: normal;
-          }
+      <style jsx>{`
+        .container {
+          max-width: 1440px;
         }
       `}</style>
     </aside>
